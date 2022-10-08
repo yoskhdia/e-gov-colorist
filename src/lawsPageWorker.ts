@@ -1,4 +1,4 @@
-import { browser } from "webextension-polyfill-ts";
+import browser from "webextension-polyfill";
 import { HighlightParentheses, Message } from "@src/def/messages";
 
 let contextMenuOnClickedElement: Element;

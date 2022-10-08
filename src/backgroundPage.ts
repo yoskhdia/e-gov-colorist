@@ -1,4 +1,4 @@
-import { browser } from "webextension-polyfill-ts";
+import browser from "webextension-polyfill";
 import { Message } from "@src/def/messages";
 import { LawsSiteUrlPattern } from "@src/def/eGov";
 
