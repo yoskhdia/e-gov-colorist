@@ -3,6 +3,8 @@ const { merge } = require("webpack-merge");
 const common = require("./webpack.common.js");
 /* eslint-enable */
 
-module.exports = merge(common, {
-    mode: "production",
-});
+module.exports = function (env) {
+    return merge(common(env), {
+        mode: "production",
+    });
+};
