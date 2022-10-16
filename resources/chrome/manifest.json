@@ -1,10 +1,14 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "e-Gov Colorist",
     "description": "e-Gov法令検索サイト上で使用できる、いくつかの補助機能を追加します。",
     "version": "1.0.0",
-    "browser_action": {
-        "default_icon": "icon-16.png",
+    "action": {
+        "default_icon": {
+            "16": "icon-16.png",
+            "48": "icon-48.png",
+            "128": "icon-128.png"
+        },
         "default_popup": "popup.html"
     },
     "content_scripts": [
@@ -14,13 +18,13 @@
         }
     ],
     "background": {
-        "scripts": ["js/backgroundPage.js"],
-        "persistent": false
+        "service_worker": "js/background.js"
     },
     "icons": {
         "16": "icon-16.png",
         "48": "icon-48.png",
         "128": "icon-128.png"
     },
-    "permissions": ["activeTab", "menus", "contextMenus", "*://*.e-gov.go.jp/"]
+    "host_permissions": ["https://*.e-gov.go.jp/"],
+    "permissions": ["activeTab", "contextMenus"]
 }

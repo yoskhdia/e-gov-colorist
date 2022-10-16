@@ -5,10 +5,12 @@
     "engines": {
         "yarn": "^1.22.19"
     },
-    "main": "index.js",
+    "private": true,
     "scripts": {
         "build": "webpack --config webpack.prod.js",
+        "build-firefox": "webpack --config webpack.prod.js --env APP_TARGET=firefox",
         "dev": "webpack -w --config webpack.dev.js",
+        "dev-firefox": "webpack -w --config webpack.dev.js --env APP_TARGET=firefox",
         "test": "jest --config=jest.config.js",
         "lint": "eslint --fix -c ./.eslintrc.js \"src/**/*.ts*\"",
         "prettify": "prettier --write \"src/**/*.ts*\"",
@@ -50,6 +52,7 @@
         "babel-core": "^6.26.3",
         "babel-jest": "^29.1.2",
         "babel-loader": "^8.2.5",
+        "copy-webpack-plugin": "^11.0.0",
         "css-loader": "^6.7.1",
         "eslint": "^8.25.0",
         "eslint-config-prettier": "^8.5.0",
